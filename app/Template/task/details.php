@@ -7,6 +7,11 @@
         <div class="task-summary-columns">
             <div class="task-summary-column">
                 <ul class="no-bullet">
+                    <?php if (! empty($task['epic'])): ?>
+                        <li>
+                            <strong><?= t('Epic:') ?></strong> <span><?= $this->text->e($task['epic']) ?></span>
+                        </li>
+                    <?php endif ?>
                     <li>
                         <strong><?= t('Status:') ?></strong>
                         <span>

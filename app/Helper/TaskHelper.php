@@ -183,10 +183,11 @@ class TaskHelper extends Base
 
     public function renderScoreField(array $values, array $errors = array(), array $attributes = array())
     {
+        $options = array('' => '', 'Small' => 'Small', 'Medium' => 'Medium', 'Large' => 'Large', 'XLarge' => 'XLarge', 'XXLarge' => 'XXLarge', 'XXXLarge' => 'XXXLarge');
         $attributes = array_merge(array('tabindex="14"'), $attributes);
 
         $html = $this->helper->form->label(t('Complexity'), 'score');
-        $html .= $this->helper->form->number('score', $values, $errors, $attributes);
+        $html .= $this->helper->form->select('score', $options, $values, $errors, $attributes);
 
         return $html;
     }
@@ -197,6 +198,16 @@ class TaskHelper extends Base
 
         $html = $this->helper->form->label(t('Reference'), 'reference');
         $html .= $this->helper->form->text('reference', $values, $errors, $attributes, 'form-input-small');
+
+        return $html;
+    }
+
+    public function renderEpicField(array $values, array $errors = array(), array $attributes = array())
+    {
+        $attributes = array_merge(array('tabindex="16"'), $attributes);
+
+        $html = $this->helper->form->label(t('Epic'), 'epic');
+        $html .= $this->helper->form->text('epic', $values, $errors, $attributes, 'form-input-small');
 
         return $html;
     }
