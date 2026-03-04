@@ -38,6 +38,11 @@
                 <span class="ui-helper-hidden-accessible"><?= t('Reference') ?> </span><?= $this->task->renderReference($task) ?>
             </span>
         <?php endif ?>
+        <?php if ($task['epic']): ?>
+            <span title="<?= t('Epic') ?>">
+                <?= $this->text->e($task['epic']) ?>
+            </span>
+        <?php endif ?>
     </div>
     <div class="task-board-icons-row">
         <?php if ($task['is_milestone'] == 1): ?>

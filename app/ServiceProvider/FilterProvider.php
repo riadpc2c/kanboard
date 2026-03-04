@@ -32,6 +32,7 @@ use Kanboard\Filter\TaskPriorityFilter;
 use Kanboard\Filter\TaskProjectFilter;
 use Kanboard\Filter\TaskReferenceFilter;
 use Kanboard\Filter\TaskScoreFilter;
+use Kanboard\Filter\TaskEpicFilter;
 use Kanboard\Filter\TaskStatusFilter;
 use Kanboard\Filter\TaskSubtaskAssigneeFilter;
 use Kanboard\Filter\TaskSwimlaneFilter;
@@ -209,6 +210,7 @@ class FilterProvider implements ServiceProviderInterface
                 ->withFilter(new TaskProjectFilter())
                 ->withFilter(new TaskReferenceFilter())
                 ->withFilter(new TaskScoreFilter())
+                ->withFilter(new TaskEpicFilter())
                 ->withFilter(new TaskStatusFilter())
                 ->withFilter(
                     TaskSubtaskAssigneeFilter::getInstance()

@@ -105,6 +105,7 @@ class TaskFinderModel extends Base
                 TaskModel::TABLE.'.position',
                 TaskModel::TABLE.'.is_active',
                 TaskModel::TABLE.'.score',
+                TaskModel::TABLE.'.epic',
                 TaskModel::TABLE.'.category_id',
                 TaskModel::TABLE.'.priority',
                 TaskModel::TABLE.'.date_moved',
