@@ -8,7 +8,13 @@ use PDO;
 use Kanboard\Core\Security\Token;
 use Kanboard\Core\Security\Role;
 
-const VERSION = 139;
+const VERSION = 140;
+
+function version_140(PDO $pdo)
+{
+    $pdo->exec('ALTER TABLE `tasks` ADD COLUMN `epic` VARCHAR(255)');
+    $pdo->exec('ALTER TABLE `tasks` MODIFY COLUMN `score` VARCHAR(255)');
+}
 
 function version_139(PDO $pdo)
 {

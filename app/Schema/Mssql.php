@@ -8,7 +8,13 @@ use PDO;
 use Kanboard\Core\Security\Token;
 use Kanboard\Core\Security\Role;
 
-const VERSION = 3;
+const VERSION = 4;
+
+function version_4(PDO $pdo)
+{
+    $pdo->exec('ALTER TABLE dbo.tasks ADD epic nvarchar(255)');
+    $pdo->exec('ALTER TABLE dbo.tasks ALTER COLUMN score nvarchar(255)');
+}
 
 function version_3(PDO $pdo)
 {
